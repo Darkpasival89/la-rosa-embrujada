@@ -6,7 +6,7 @@
 }
 
 /* Styles for the flower */
-#flower {
+.flower-container {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -14,119 +14,109 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .glass-dome {
-  width: 20vw;
-  height: 30vh;
-  border-radius: 50% / 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
   position: relative;
+  width: 200px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  overflow: hidden;
+}
+
+.base {
+  position: absolute;
+  bottom: -20px;
+  width: 220px;
+  height: 40px;
+  background: #ff9a9e;
+  border-radius: 50%;
 }
 
 .flower {
-  position: absolute;
-  bottom: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  width: 40px;
+  height: 60px;
+  margin-bottom: 40px;
 }
 
 .stem {
-  width: 0.5vw;
-  height: 10vh;
-  background-color: green;
-  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  height: 50px;
+  background: #4CAF50;
+  transform: translateX(-50%);
+}
+
+.bloom {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: #FF1493;
+  border-radius: 50%;
+  transform: translateX(-50%);
 }
 
 .petal {
-  width: 2vw;
-  height: 2vw;
-  background-color: red;
-  border-radius: 50%;
   position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #FF69B4;
+  border-radius: 50% 0;
 }
 
-.petal1 {
-  top: -10px;
-  left: -10px;
-}
+.petal:nth-child(1) { transform: rotate(0deg) translateX(10px); }
+.petal:nth-child(2) { transform: rotate(72deg) translateX(10px); }
+.petal:nth-child(3) { transform: rotate(144deg) translateX(10px); }
+.petal:nth-child(4) { transform: rotate(216deg) translateX(10px); }
+.petal:nth-child(5) { transform: rotate(288deg) translateX(10px); }
+.petal:nth-child(6) { transform: rotate(360deg) translateX(10px); }
 
-.petal2 {
-  top: -10px;
-  right: -10px;
-}
+.petal:nth-child(7) { transform: rotate(0deg) translateX(10px); }
+.petal:nth-child(8) { transform: rotate(72deg) translateX(10px); }
+.petal:nth-child(9) { transform: rotate(144deg) translateX(10px); }
+.petal:nth-child(10) { transform: rotate(216deg) translateX(10px); }
+.petal:nth-child(11) { transform: rotate(288deg) translateX(10px); }
+.petal:nth-child(12) { transform: rotate(360deg) translateX(10px); }
 
-.petal3 {
-  top: -30px;
-  left: 0;
-}
-
-.falling-petal {
-  width: 2vw;
-  height: 2vw;
-  background-color: red;
-  border-radius: 50%;
+/* Styles for the button */
+.btn {
   position: absolute;
-  top: -30px;
+  top: 50%;
   left: 50%;
-  animation: fall 7s infinite; /* Animación de caída */
+  transform: translate(-50%, -50%);
+  background: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Responsiveness */
-@media (max-width: 1200px) {
-  .glass-dome {
-    width: 30vw;
-    height: 45vh;
-  }
-
-  .flower .stem {
-    width: 1vw;
-    height: 15vh;
-  }
-
-  .petal, .falling-petal {
-    width: 3vw;
-    height: 3vw;
-  }
+.btn:hover {
+  background: #3e8e41;
 }
 
+/* Responsivo para diferentes tamaños de pantalla */
 @media (max-width: 768px) {
-  .glass-dome {
-    width: 40vw;
-    height: 50vh;
-  }
-
-  .flower .stem {
-    width: 1vw;
-    height: 15vh;
-  }
-
-  .petal, .falling-petal {
-    width: 3vw;
-    height: 3vw;
+  .flower-container {
+    width: 90%;
+    height: 90vh;
   }
 }
 
 @media (max-width: 480px) {
-  .glass-dome {
-    width: 60vw;
-    height: 70vh;
-  }
-
-  .flower .stem {
-    width: 1.5vw;
-    height: 20vh;
-  }
-
-  .petal, .falling-petal {
-    width: 4vw;
-    height: 4vw;
+  .flower-container {
+    width: 90%;
+    height: 90vh;
   }
 }

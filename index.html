@@ -5,20 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🌹 Para ti fochita 🥰</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="script.js"></script>
 </head>
 <body>
-  <div id="flower">
-    <div class="glass-dome">
-      <div class="flower">
-        <div class="stem"></div>
-        <div class="petal petal1"></div>
-        <div class="petal petal2"></div>
-        <div class="petal petal3"></div>
-        <div class="falling-petal"></div> <!-- Pétalo que cae -->
+  <div class="container">
+    <div class="flower-container">
+      <div class="glass-dome">
+        <div class="base"></div>
+        <div class="flower">
+          <div class="stem"></div>
+          <div class="bloom"></div>
+          <div class="petal petal1"></div>
+          <div class="petal petal2"></div>
+          <div class="petal petal3"></div>
+          <div class="petal petal4"></div>
+          <div class="petal petal5"></div>
+          <div class="petal petal6"></div>
+          <div class="petal petal7"></div>
+          <div class="petal petal8"></div>
+          <div class="petal petal9"></div>
+          <div class="petal petal10"></div>
+          <div class="petal petal11"></div>
+          <div class="petal petal12"></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <button class="btn">Click me!</button>
+
+  <script>
+    // Función para la animación del pétalo que cae
+    function fallingPetal() {
+      const flower = document.querySelector(".flower");
+      const fallingPetal = document.querySelector(".falling-petal");
+
+      // Verifica si los elementos existen
+      if (!flower || !fallingPetal) {
+        console.error("Los elementos .flower o .falling-petal no se encontraron.");
+        return;
+      }
+
+      // Reiniciar la animación del pétalo que cae
+      fallingPetal.addEventListener('animationiteration', () => {
+        fallingPetal.style.left = `${Math.random() * 80 + 10}vw`;
+      });
+    }
+
+    // Event listener para cuando la página esté lista
+    document.addEventListener("DOMContentLoaded", function() {
+      fallingPetal();
+    });
+
+    // Event listener para el botón
+    document.querySelector(".btn").addEventListener("click", function() {
+      console.log("Botón clickado!");
+    });
+  </script>
 </body>
 </html>
