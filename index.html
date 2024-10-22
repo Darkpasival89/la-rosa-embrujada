@@ -1,67 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌹 Para ti fochita 🥰</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="responsive.css">
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🌹✨🎉 Fochita te quiero 💖🐻❤️ </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <div class="container">
-    <div class="flower-container">
-      <div class="glass-dome">
-        <div class="base"></div>
-        <div class="flower">
-          <div class="stem"></div>
-          <div class="bloom"></div>
-          <div class="petal petal1"></div>
-          <div class="petal petal2"></div>
-          <div class="petal petal3"></div>
-          <div class="petal petal4"></div>
-          <div class="petal petal5"></div>
-          <div class="petal petal6"></div>
-          <div class="petal petal7"></div>
-          <div class="petal petal8"></div>
-          <div class="petal petal9"></div>
-          <div class="petal petal10"></div>
-          <div class="petal petal11"></div>
-          <div class="petal petal12"></div>
+
+    <!-- Partículas flotantes en el fondo -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 6s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 8s;"></div>
+
+    <!-- Contenido Principal -->
+    <div class="content">
+        <h1> 🌹✨🎉 Fochita te quiero 💖🐻❤️ </h1>
+
+        <!-- Cúpula con efecto brillante -->
+        <div class="cupula">
+            <div class="flower">
+              <img src="assets/imagen-de-la-flor/tu-imagen.png" alt="Rosa" class="flor">
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <button class="btn">Click me!</button>
-
-  <script>
-    // Función para la animación del pétalo que cae
-    function fallingPetal() {
-      const flower = document.querySelector(".flower");
-      const fallingPetal = document.querySelector(".falling-petal");
-
-      // Verifica si los elementos existen
-      if (!flower || !fallingPetal) {
-        console.error("Los elementos .flower o .falling-petal no se encontraron.");
-        return;
-      }
-
-      // Reiniciar la animación del pétalo que cae
-      fallingPetal.addEventListener('animationiteration', () => {
-        fallingPetal.style.left = `${Math.random() * 80 + 10}vw`;
-      });
-    }
-
-    // Event listener para cuando la página esté lista
-    document.addEventListener("DOMContentLoaded", function() {
-      fallingPetal();
-    });
-
-    // Event listener para el botón
-    document.querySelector(".btn").addEventListener("click", function() {
-      console.log("Botón clickado!");
-    });
-  </script>
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
 </body>
 </html>
